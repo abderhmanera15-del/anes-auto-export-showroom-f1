@@ -1,11 +1,13 @@
 import cagGs3Asset from "@/assets/cag-gs3.jpg.asset.json";
 import geelyAsset from "@/assets/geely-coolray.jpg.asset.json";
-import livan from "@/assets/car-livan.jpg";
-import jetour from "@/assets/car-jetour.jpg";
+import livanAsset from "@/assets/car-livan.jpg.asset.json";
+import jetourAsset from "@/assets/car-jetour.jpg.asset.json";
 import changanAsset from "@/assets/changan-cs75.jpg.asset.json";
 
 const cagGs3 = cagGs3Asset.url;
 const geely = geelyAsset.url;
+const livan = livanAsset.url;
+const jetour = jetourAsset.url;
 const changan = changanAsset.url;
 
 export type Trim = {
