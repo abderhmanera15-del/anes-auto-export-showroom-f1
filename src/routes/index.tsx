@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CarCard } from "@/components/car-card";
+import { D3Background } from "@/components/d3-background";
 import { cars, BRANDS, PHONE_HREF, WHATSAPP_HREF } from "@/lib/cars";
 import heroImg from "@/assets/hero-ship.jpg";
 
@@ -51,6 +52,7 @@ function Index() {
         <div className="absolute inset-0 -z-10">
           <img src={heroImg} alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+          <D3Background density={26} />
         </div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-20 md:py-32">
           <motion.div
