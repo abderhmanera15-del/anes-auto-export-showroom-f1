@@ -59,20 +59,40 @@ function Index() {
             variants={staggerContainer}
             className="max-w-2xl"
           >
-            <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-1 text-xs font-medium">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0 }}
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-1 text-xs font-medium"
+            >
               <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
               <span className="text-brand-red">China</span>
               <ArrowRight className="h-3 w-3" />
               <span className="text-brand-green">Algeria</span>
             </motion.div>
-            <motion.h1 variants={fadeInUp} custom={1} className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.12, ease: "easeOut" }}
+              className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight"
+            >
               Premium Chinese cars,<br />
               <span className="text-brand-red">delivered to Algeria.</span>
             </motion.h1>
-            <motion.p variants={fadeInUp} custom={2} className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl">
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.24, ease: "easeOut" }}
+              className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl"
+            >
               Anes Auto sources, ships and delivers the latest models from CAG, Geely, Livan, Jetour and Changan — directly from Chinese factories to your door.
             </motion.p>
-            <motion.div variants={fadeInUp} custom={3} className="mt-8 flex flex-wrap gap-3">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.36, ease: "easeOut" }}
+              className="mt-8 flex flex-wrap gap-3"
+            >
               <Link to="/inventory" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-semibold hover:opacity-90 transition hover:scale-105 active:scale-95">
                 Browse Inventory <ArrowRight className="h-4 w-4" />
               </Link>
