@@ -138,37 +138,68 @@ function Index() {
 
       {/* Featured cars */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-8">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-brand-red font-semibold">Featured</p>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold mt-1">Latest arrivals</h2>
+        <AnimatedSection>
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-xs uppercase tracking-widest text-brand-red font-semibold">Featured</p>
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold mt-1">Latest arrivals</h2>
+            </div>
+            <Link to="/inventory" className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold hover:text-brand-red">
+              View all <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-          <Link to="/inventory" className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold hover:text-brand-red">
-            View all <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {cars.slice(0, 3).map((c) => <CarCard key={c.slug} car={c} />)}
-        </div>
+        </AnimatedSection>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.12 } },
+          }}
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {cars.slice(0, 3).map((c) => (
+            <motion.div
+              key={c.slug}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+              }}
+            >
+              <CarCard car={c} />
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16 md:py-24">
-        <div className="relative overflow-hidden rounded-3xl bg-foreground text-background p-8 md:p-14">
-          <div className="absolute inset-y-0 right-0 w-1/2 brand-gradient opacity-20" />
-          <div className="relative max-w-xl">
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold">Found your next car?</h2>
-            <p className="mt-3 text-background/80">Talk to our team for availability, specs and a personalized quote.</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full bg-background text-foreground px-6 py-3 text-sm font-semibold">
-                <Phone className="h-4 w-4" /> +213 561 00 92 25
-              </a>
-              <a href={WHATSAPP_HREF} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-semibold">
-                <MessageCircle className="h-4 w-4" /> WhatsApp
-              </a>
+        <AnimatedSection>
+          <div className="relative overflow-hidden rounded-3xl bg-foreground text-background p-8 md:p-14">
+            <div className="absolute inset-y-0 right-0 w-1/2 brand-gradient opacity-20" />
+            <div className="relative max-w-xl">
+              <h2 className="font-display text-3xl md:text-4xl font-extrabold">Found your next car?</h2>
+              <p className="mt-3 text-background/80">Talk to our team for availability, specs and a personalized quote.</p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full bg-background text-foreground px-6 py-3 text-sm font-semibold"
+                >
+                  <Phone className="h-4 w-4" /> +213 561 00 92 25
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={WHATSAPP_HREF} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-brand-green px-6 py-3 text-sm font-semibold"
+                >
+                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                </motion.a>
+              </div>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </section>
 
       <SiteFooter />
