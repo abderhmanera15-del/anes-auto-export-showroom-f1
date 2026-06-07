@@ -1,10 +1,27 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Ship, ShieldCheck, Wrench, Phone, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CarCard } from "@/components/car-card";
 import { cars, BRANDS, PHONE_HREF, WHATSAPP_HREF } from "@/lib/cars";
 import heroImg from "@/assets/hero-ship.jpg";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" },
+  }),
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12 },
+  },
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
