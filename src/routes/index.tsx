@@ -123,14 +123,16 @@ function Index() {
           { icon: Ship, title: "Direct from China", text: "We ship straight from manufacturer factories — no middlemen, no markup." },
           { icon: ShieldCheck, title: "Verified Quality", text: "Every vehicle is inspected before export. Genuine specs and full documentation." },
           { icon: Wrench, title: "After-Sales Support", text: "Spare parts, service guidance and ongoing support for every car we deliver." },
-        ].map((f) => (
-          <div key={f.title} className="rounded-2xl border border-border p-6 hover:shadow-md transition bg-card">
-            <div className="h-11 w-11 rounded-xl brand-gradient text-white inline-flex items-center justify-center">
-              <f.icon className="h-5 w-5" />
+        ].map((f, i) => (
+          <AnimatedSection key={f.title} delay={i * 0.15}>
+            <div className="rounded-2xl border border-border p-6 hover:shadow-md transition bg-card hover:-translate-y-1 duration-300">
+              <div className="h-11 w-11 rounded-xl brand-gradient text-white inline-flex items-center justify-center">
+                <f.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 text-lg font-bold">{f.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{f.text}</p>
             </div>
-            <h3 className="mt-4 text-lg font-bold">{f.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{f.text}</p>
-          </div>
+          </AnimatedSection>
         ))}
       </section>
 
