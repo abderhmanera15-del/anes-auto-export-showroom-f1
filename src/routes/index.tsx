@@ -45,32 +45,37 @@ function Index() {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
         </div>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-20 md:py-32">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-1 text-xs font-medium">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-2xl"
+          >
+            <motion.div variants={fadeInUp} custom={0} className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-3 py-1 text-xs font-medium">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
               <span className="text-brand-red">China</span>
               <ArrowRight className="h-3 w-3" />
               <span className="text-brand-green">Algeria</span>
-            </div>
-            <h1 className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
+            </motion.div>
+            <motion.h1 variants={fadeInUp} custom={1} className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-tight">
               Premium Chinese cars,<br />
               <span className="text-brand-red">delivered to Algeria.</span>
-            </h1>
-            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl">
+            </motion.h1>
+            <motion.p variants={fadeInUp} custom={2} className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl">
               Anes Auto sources, ships and delivers the latest models from CAG, Geely, Livan, Jetour and Changan — directly from Chinese factories to your door.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/inventory" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-semibold hover:opacity-90 transition">
+            </motion.p>
+            <motion.div variants={fadeInUp} custom={3} className="mt-8 flex flex-wrap gap-3">
+              <Link to="/inventory" className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-semibold hover:opacity-90 transition hover:scale-105 active:scale-95">
                 Browse Inventory <ArrowRight className="h-4 w-4" />
               </Link>
-              <a href={WHATSAPP_HREF} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-brand-green text-background px-6 py-3 text-sm font-semibold hover:opacity-90 transition">
+              <a href={WHATSAPP_HREF} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-brand-green text-background px-6 py-3 text-sm font-semibold hover:opacity-90 transition hover:scale-105 active:scale-95">
                 <MessageCircle className="h-4 w-4" /> WhatsApp Us
               </a>
-              <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-6 py-3 text-sm font-semibold hover:border-foreground transition">
+              <a href={PHONE_HREF} className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 backdrop-blur px-6 py-3 text-sm font-semibold hover:border-foreground transition hover:scale-105 active:scale-95">
                 <Phone className="h-4 w-4" /> Call Now
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
