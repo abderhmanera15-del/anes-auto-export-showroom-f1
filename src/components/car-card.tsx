@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Phone, MessageCircle, Check } from "lucide-react";
 import type { Car } from "@/lib/cars";
 import { PHONE_HREF, WHATSAPP_HREF } from "@/lib/cars";
@@ -8,7 +9,11 @@ export function CarCard({ car }: { car: Car }) {
   const [activeTrim, setActiveTrim] = useState(0);
 
   return (
-    <article className="group relative flex flex-col rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+    <motion.article
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="group relative flex flex-col rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-shadow duration-300"
+    >
       <div className="relative aspect-[16/10] bg-gradient-to-br from-secondary to-background overflow-hidden">
         <img
           src={car.image}
@@ -42,55 +47,84 @@ export function CarCard({ car }: { car: Car }) {
           </a>
         </div>
 
-        <button
+        <motion.button
+          whileTap={{ scale: 0.98 }}
           onClick={() => setOpen((v) => !v)}
           className="inline-flex items-center justify-between w-full rounded-xl border border-border px-4 py-3 text-sm font-semibold hover:border-brand-red hover:text-brand-red transition"
           aria-expanded={open}
         >
           <span>View models ({car.trims.length})</span>
-          <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
-        </button>
+          <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
+            <ChevronDown className="h-4 w-4" />
+          </motion.div>
+        </motion.button>
 
-        {open && (
-          <div className="rounded-xl border border-border bg-background overflow-hidden">
-            <div className="flex border-b border-border">
-              {car.trims.map((t, i) => (
-                <button
-                  key={t.name}
-                  onClick={() => setActiveTrim(i)}
-                  className={`flex-1 text-xs sm:text-sm font-semibold py-2.5 transition ${
-                    activeTrim === i
-                      ? "bg-foreground text-background"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {t.name}
-                </button>
-              ))}
-            </div>
-            <ul className="p-4 grid grid-cols-2 gap-2">
-              {car.trims[activeTrim].highlights.map((h) => (
-                <li key={h} className="flex items-start gap-1.5 text-xs text-foreground/80">
-                  <Check className="h-3.5 w-3.5 text-brand-green shrink-0 mt-0.5" /> {h}
-                </li>
-              ))}
-            </ul>
-            <div className="px-4 pb-4 flex items-center justify-between text-xs">
-              <span className="text-muted-foreground">Pricing for {car.trims[activeTrim].name}</span>
-              <span className="font-bold text-brand-red">Contact us</span>
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="rounded-xl border border-border bg-background overflow-hidden"
+            >
+              <div className="flex border-b border-border">
+                {car.trims.map((t, i) => (
+                  <button
+                    key={t.name}
+                    onClick={() => setActiveTrim(i)}
+                    className={`flex-1 text-xs sm:text-sm font-semibold py-2.5 transition ${
+                      activeTrim === i
+                        ? "bg-foreground text-background"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {t.name}
+                  </button>
+                ))}
+              </div>
+              <motion.ul
+                key={activeTrim}
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.2 }}
+                className="p-4 grid grid-cols-2 gap-2"
+              >
+                {car.trims[activeTrim].highlights.map((h) => (
+                  <li key={h} className="flex items-start gap-1.5 text-xs text-foreground/80">
+                    <Check className="h-3.5 w-3.5 text-brand-green shrink-0 mt-0.5" /> {h}
+                  </li>
+                ))}
+              </motion.ul>
+              <div className="px-4 pb-4 flex items-center justify-between text-xs">
+                <span className="text-muted-foreground">Pricing for {car.trims[activeTrim].name}</span>
+                <span className="font-bold text-brand-red">Contact us</span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <div className="grid grid-cols-2 gap-2">
-          <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground text-background px-3 py-2.5 text-sm font-semibold hover:opacity-90 transition">
+          <motion.a
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            href={PHONE_HREF}
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground text-background px-3 py-2.5 text-sm font-semibold hover:opacity-90 transition"
+          >
             <Phone className="h-4 w-4" /> Details
-          </a>
-          <a href={WHATSAPP_HREF} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-green text-background px-3 py-2.5 text-sm font-semibold hover:opacity-90 transition">
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-green text-background px-3 py-2.5 text-sm font-semibold hover:opacity-90 transition"
+          >
             <MessageCircle className="h-4 w-4" /> WhatsApp
-          </a>
+          </motion.a>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

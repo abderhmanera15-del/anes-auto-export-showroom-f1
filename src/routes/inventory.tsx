@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CarCard } from "@/components/car-card";
@@ -25,7 +26,12 @@ function InventoryPage() {
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
 
-      <section className="border-b border-border bg-secondary/30">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="border-b border-border bg-secondary/30"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 md:py-16">
           <p className="text-xs uppercase tracking-widest text-brand-red font-semibold">Inventory</p>
           <h1 className="mt-2 font-display text-4xl md:text-5xl font-extrabold">Available cars</h1>
@@ -33,15 +39,20 @@ function InventoryPage() {
             All vehicles are sourced directly from Chinese manufacturers. Tap a car to explore its available trims and specs.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sticky top-16 md:top-20 z-30 bg-background">
-        <div className="flex flex-wrap gap-2">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+          className="flex flex-wrap gap-2"
+        >
           {["All", ...BRANDS].map((b) => (
             <button
               key={b}
               onClick={() => setFilter(b)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold border transition ${
+              className={`px-4 py-2 rounded-full text-sm font-semibold border transition hover:scale-105 active:scale-95 ${
                 filter === b
                   ? "bg-foreground text-background border-foreground"
                   : "bg-background border-border text-foreground hover:border-foreground"
@@ -50,11 +61,24 @@ function InventoryPage() {
               {b}
             </button>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {list.map((c) => <CarCard key={c.slug} car={c} />)}
+        <AnimatePresence mode="popLayout">
+          {list.map((c, i) => (
+            <motion.div
+              key={c.slug}
+              layout
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.35, delay: i * 0.05, ease: "easeOut" }}
+            >
+              <CarCard car={c} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </section>
 
       <SiteFooter />
