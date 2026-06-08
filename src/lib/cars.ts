@@ -39,7 +39,6 @@ export const cars: Car[] = [
       { name: "Basic", highlights: ["1.5L Engine", "Manual A/C", "Fabric Seats", "15\" Wheels"] },
       { name: "Medium", highlights: ["1.5L Turbo", "Auto A/C", "Touchscreen 9\"", "Rear Camera"] },
       { name: "Emzoom", highlights: ["1.5L Turbo", "Leather Seats", "Sunroof", "360° Camera"] },
-      { name: "Smart", highlights: ["1.5L Turbo", "Panoramic Roof", "ADAS", "Wireless Charge"] },
     ],
   },
   {
