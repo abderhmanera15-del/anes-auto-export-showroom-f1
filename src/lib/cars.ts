@@ -101,6 +101,6 @@ export const cars: Car[] = [
 ];
 
 export const BRANDS = ["CAG", "Geely", "Livan", "Jetour", "Changan"];
-export const PHONE = "+213 561 00 92 25";
-export const PHONE_HREF = "tel:+213561009225";
-export const WHATSAPP_HREF = "https://wa.me/213561009225";
+export const PHONE = "+353 85 252 7082";
+export const PHONE_HREF = "tel:+353852527082";
+export const WHATSAPP_HREF = "https://wa.me/353852527082";
