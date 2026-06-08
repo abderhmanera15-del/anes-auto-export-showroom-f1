@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CarCard } from "@/components/car-card";
@@ -20,7 +20,18 @@ export const Route = createFileRoute("/inventory")({
 
 function InventoryPage() {
   const [filter, setFilter] = useState<string>("All");
+  const [hideBar, setHideBar] = useState(false);
+  const { scrollY } = useScroll();
   const list = filter === "All" ? cars : cars.filter((c) => c.brand === filter);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 120) {
+      setHideBar(true);
+    } else if (latest < previous) {
+      setHideBar(false);
+    }
+  });
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -41,7 +52,11 @@ function InventoryPage() {
         </div>
       </motion.section>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sticky top-16 md:top-20 z-30 bg-background">
+      <motion.div
+        className="mx-auto max-w-7xl px-4 sm:px-6 py-8 sticky top-16 md:top-20 z-30 bg-background"
+        animate={{ y: hideBar ? -120 : 0 }}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +77,7 @@ function InventoryPage() {
             </button>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">
