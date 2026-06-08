@@ -20,7 +20,18 @@ export const Route = createFileRoute("/inventory")({
 
 function InventoryPage() {
   const [filter, setFilter] = useState<string>("All");
+  const [hideBar, setHideBar] = useState(false);
+  const { scrollY } = useScroll();
   const list = filter === "All" ? cars : cars.filter((c) => c.brand === filter);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 120) {
+      setHideBar(true);
+    } else if (latest < previous) {
+      setHideBar(false);
+    }
+  });
 
   return (
     <div className="min-h-screen flex flex-col">
