@@ -105,9 +105,65 @@ export const cars: Car[] = [
       { name: "Supreme", highlights: ["2.0T AWD", "Massage Seats", "BOSE Audio", "ADAS"] },
     ],
   },
+  {
+    slug: "mg-5",
+    brand: "MG",
+    model: "MG5",
+    image: mg5,
+    tagline: "Sport Sedan — Stylish & Dynamic",
+    body: "Sedan",
+    fuel: "Petrol",
+    trims: [
+      { name: "Comfort", highlights: ["1.5L Engine", "CVT Auto", "Touchscreen 10\"", "LED Headlights"] },
+      { name: "Luxury", highlights: ["1.5L Engine", "Leather Seats", "Sunroof", "Rear Camera"] },
+      { name: "GT", highlights: ["1.5T Turbo", "Sport Body Kit", "17\" Alloys", "Ambient Lighting"] },
+    ],
+  },
+  {
+    slug: "jetta-vs5",
+    brand: "Jetta",
+    model: "VS5",
+    image: jettaVs5,
+    tagline: "Urban SUV — German Engineering",
+    body: "SUV",
+    fuel: "Petrol",
+    trims: [
+      { name: "Basic", highlights: ["1.4T Engine", "Manual", "ABS + ESP", "LED DRL"] },
+      { name: "Comfort", highlights: ["1.4T Auto", "Touch Screen", "Reverse Camera", "Cruise Control"] },
+      { name: "Premium", highlights: ["1.4T Auto", "Panoramic Roof", "Leather", "Black Alloys"] },
+    ],
+  },
+  {
+    slug: "geely-emgrand",
+    brand: "Geely",
+    model: "Emgrand",
+    image: emgrand,
+    tagline: "Elegant Sedan — Smooth & Refined",
+    body: "Sedan",
+    fuel: "Petrol",
+    trims: [
+      { name: "Basic", highlights: ["1.5L Engine", "Manual", "Fabric Seats", "Bluetooth"] },
+      { name: "Comfort", highlights: ["1.5L CVT", "Touchscreen", "Rear Camera", "Cruise Control"] },
+      { name: "Flagship", highlights: ["1.5L CVT", "Leather", "Sunroof", "10.25\" Display"] },
+    ],
+  },
+  {
+    slug: "vw-t-roc",
+    brand: "Volkswagen",
+    model: "T-Roc",
+    image: troc,
+    tagline: "Premium Crossover — Bold European Style",
+    body: "Crossover",
+    fuel: "Petrol",
+    trims: [
+      { name: "Style", highlights: ["1.4 TSI", "DSG Auto", "LED Matrix", "17\" Alloys"] },
+      { name: "R-Line", highlights: ["1.4 TSI", "Sport Seats", "Digital Cockpit", "18\" Alloys"] },
+      { name: "R", highlights: ["2.0 TSI 4Motion", "Performance Brakes", "Panoramic Roof", "Beats Audio"] },
+    ],
+  },
 ];
 
-export const BRANDS = ["CAG", "Geely", "Livan", "Jetour", "Changan"];
+export const BRANDS = ["CAG", "Geely", "Livan", "Jetour", "Changan", "MG", "Jetta", "Volkswagen"];
 export const PHONE = "+353 85 252 7082";
 export const PHONE_HREF = "tel:+353852527082";
 export const WHATSAPP_HREF = "https://wa.me/353852527082";
