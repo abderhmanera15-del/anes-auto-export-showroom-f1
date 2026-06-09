@@ -3,12 +3,20 @@ import geelyAsset from "@/assets/geely-coolray.jpg.asset.json";
 import livanAsset from "@/assets/car-livan.jpg.asset.json";
 import jetourAsset from "@/assets/car-jetour.jpg.asset.json";
 import changanAsset from "@/assets/changan-cs75.jpg.asset.json";
+import mg5Asset from "@/assets/mg5.jpg.asset.json";
+import jettaVs5Asset from "@/assets/jetta-vs5.jpg.asset.json";
+import emgrandAsset from "@/assets/geely-emgrand.jpg.asset.json";
+import trocAsset from "@/assets/vw-troc.jpg.asset.json";
 
 const cagGs3 = cagGs3Asset.url;
 const geely = geelyAsset.url;
 const livan = livanAsset.url;
 const jetour = jetourAsset.url;
 const changan = changanAsset.url;
+const mg5 = mg5Asset.url;
+const jettaVs5 = jettaVs5Asset.url;
+const emgrand = emgrandAsset.url;
+const troc = trocAsset.url;
 
 export type Trim = {
   name: string;
