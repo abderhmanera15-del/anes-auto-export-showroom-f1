@@ -27,7 +27,7 @@ export function CarCard({ car }: { car: Car }) {
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="group relative flex flex-col rounded-2xl border border-border bg-card overflow-hidden hover:shadow-xl transition-shadow duration-300"
       >
-        <div className="relative aspect-[16/10] bg-gradient-to-br from-secondary to-background overflow-hidden">
+        <div className="relative aspect-[16/10] bg-card overflow-hidden">
           <img
             src={car.image}
             alt={`${car.brand} ${car.model}`}
