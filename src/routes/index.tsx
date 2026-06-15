@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Anes Auto — Chinese Cars Imported to Algeria" },
-      { name: "description", content: "Discover CAG, Geely, Livan, Jetour and Changan vehicles imported directly from China to Algeria by Anes Auto." },
+      { name: "description", content: "Discover CAG, Geely, Jetour and Changan vehicles imported directly from China to Algeria by Anes Auto." },
     ],
   }),
   component: Index,
@@ -87,7 +87,7 @@ function Index() {
               transition={{ duration: 0.6, delay: 0.24, ease: "easeOut" }}
               className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl"
             >
-              Anes Auto sources, ships and delivers the latest models from CAG, Geely, Livan, Jetour and Changan — directly from Chinese factories to your door.
+              Anes Auto sources, ships and delivers the latest models from CAG, Geely, Jetour and Changan — directly from Chinese factories to your door.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}

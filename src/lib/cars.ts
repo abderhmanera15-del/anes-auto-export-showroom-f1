@@ -71,8 +71,8 @@ export const cars: Car[] = [
   },
   {
     slug: "livan-x3-pro",
-    brand: "Livan",
-    model: "X3 Pro",
+    brand: "Geely",
+    model: "Livan X3 Pro",
     image: livan,
     tagline: "Family SUV — Spacious & Smart",
     body: "SUV",
@@ -211,7 +211,7 @@ export const cars: Car[] = [
   },
 ];
 
-export const BRANDS = ["CAG", "Geely", "Livan", "Jetour", "Changan", "MG", "Jetta", "Volkswagen"];
+export const BRANDS = ["CAG", "Geely", "Jetour", "Changan", "MG", "Jetta", "Volkswagen"];
 export const PHONE = "+353 85 252 7082";
 export const PHONE_HREF = "tel:+353852527082";
 export const WHATSAPP_HREF = "https://wa.me/353852527082";

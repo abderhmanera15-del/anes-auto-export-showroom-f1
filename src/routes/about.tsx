@@ -23,7 +23,7 @@ function About() {
         <p className="text-xs uppercase tracking-widest text-brand-red font-semibold">About us</p>
         <h1 className="mt-2 font-display text-4xl md:text-5xl font-extrabold max-w-3xl">Bridging China & Algeria, one car at a time.</h1>
         <p className="mt-5 text-muted-foreground max-w-3xl">
-          Anes Auto is an Algerian import specialist focused on bringing the latest Chinese vehicles — CAG, Geely, Livan, Jetour and Changan — to the local market. We handle sourcing, inspection, shipping and delivery so you get the right car with confidence.
+          Anes Auto is an Algerian import specialist focused on bringing the latest Chinese vehicles — CAG, Geely, Jetour and Changan — to the local market. We handle sourcing, inspection, shipping and delivery so you get the right car with confidence.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
