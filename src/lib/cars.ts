@@ -167,6 +167,48 @@ export const cars: Car[] = [
       { name: "R", highlights: ["2.0 TSI 4Motion", "Performance Brakes", "Panoramic Roof", "Beats Audio"] },
     ],
   },
+  {
+    slug: "geely-monjaro",
+    brand: "Geely",
+    model: "Monjaro",
+    image: monjaro,
+    tagline: "Flagship SUV — Luxury & Power",
+    body: "SUV",
+    fuel: "Petrol",
+    trims: [
+      { name: "Comfort", highlights: ["2.0T Engine", "8-Speed Auto", "Leather Seats", "12.3\" Display"] },
+      { name: "Luxury", highlights: ["2.0T Engine", "Panoramic Roof", "Heated/Ventilated Seats", "ADAS"] },
+      { name: "Flagship", highlights: ["2.0T AWD", "Bose Audio", "Massage Seats", "Head-Up Display"] },
+    ],
+  },
+  {
+    slug: "jetour-dashing",
+    brand: "Jetour",
+    model: "Dashing",
+    image: dashing,
+    tagline: "Sport Coupe SUV — Futuristic Design",
+    body: "SUV Coupe",
+    fuel: "Petrol",
+    trims: [
+      { name: "Basic", highlights: ["1.6T Engine", "7-DCT", "LED Matrix Lights", "10.25\" Screen"] },
+      { name: "Sport", highlights: ["1.6T Engine", "Sport Seats", "Panoramic Roof", "Wireless Charge"] },
+      { name: "Top", highlights: ["1.6T DCT", "Leather", "ADAS Level 2", "Ambient Lighting"] },
+    ],
+  },
+  {
+    slug: "jetour-x90-plus",
+    brand: "Jetour",
+    model: "X90 Plus",
+    image: x90Plus,
+    tagline: "Luxury 7-Seater SUV — Bold & Spacious",
+    body: "SUV 7P",
+    fuel: "Petrol",
+    trims: [
+      { name: "Comfort", highlights: ["1.6T 7-Seat", "DCT Auto", "12.3\" Display", "Rear Camera"] },
+      { name: "Luxury", highlights: ["1.6T DCT", "Leather", "Panoramic Roof", "Wireless Charge"] },
+      { name: "Flagship", highlights: ["2.0T DCT", "Massage Seats", "ADAS Level 2", "Premium Audio"] },
+    ],
+  },
 ];
 
 export const BRANDS = ["CAG", "Geely", "Livan", "Jetour", "Changan", "MG", "Jetta", "Volkswagen"];
