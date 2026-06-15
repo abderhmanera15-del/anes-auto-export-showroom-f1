@@ -7,6 +7,9 @@ import mg5Asset from "@/assets/mg5.jpg.asset.json";
 import jettaVs5Asset from "@/assets/jetta-vs5.jpg.asset.json";
 import emgrandAsset from "@/assets/geely-emgrand.jpg.asset.json";
 import trocAsset from "@/assets/vw-troc.jpg.asset.json";
+import monjaroAsset from "@/assets/geely-monjaro.jpg.asset.json";
+import dashingAsset from "@/assets/jetour-dashing.jpg.asset.json";
+import x90PlusAsset from "@/assets/jetour-x90-plus.jpg.asset.json";
 
 const cagGs3 = cagGs3Asset.url;
 const geely = geelyAsset.url;
@@ -17,6 +20,9 @@ const mg5 = mg5Asset.url;
 const jettaVs5 = jettaVs5Asset.url;
 const emgrand = emgrandAsset.url;
 const troc = trocAsset.url;
+const monjaro = monjaroAsset.url;
+const dashing = dashingAsset.url;
+const x90Plus = x90PlusAsset.url;
 
 export type Trim = {
   name: string;
