@@ -10,7 +10,7 @@ export const Route = createFileRoute("/inventory")({
   head: () => ({
     meta: [
       { title: "Inventory — Anes Auto" },
-      { name: "description", content: "Browse all Chinese cars available for import: CAG, Geely, Livan, Jetour and Changan." },
+      { name: "description", content: "Browse all Chinese cars available for import: CAG, Geely, Jetour and Changan." },
       { property: "og:title", content: "Inventory — Anes Auto" },
       { property: "og:description", content: "All available Chinese vehicles for export to Algeria." },
     ],
