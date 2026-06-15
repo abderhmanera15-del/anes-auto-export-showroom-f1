@@ -7,6 +7,9 @@ import mg5Asset from "@/assets/mg5.jpg.asset.json";
 import jettaVs5Asset from "@/assets/jetta-vs5.jpg.asset.json";
 import emgrandAsset from "@/assets/geely-emgrand.jpg.asset.json";
 import trocAsset from "@/assets/vw-troc.jpg.asset.json";
+import monjaroAsset from "@/assets/geely-monjaro.jpg.asset.json";
+import dashingAsset from "@/assets/jetour-dashing.jpg.asset.json";
+import x90PlusAsset from "@/assets/jetour-x90-plus.jpg.asset.json";
 
 const cagGs3 = cagGs3Asset.url;
 const geely = geelyAsset.url;
@@ -17,6 +20,9 @@ const mg5 = mg5Asset.url;
 const jettaVs5 = jettaVs5Asset.url;
 const emgrand = emgrandAsset.url;
 const troc = trocAsset.url;
+const monjaro = monjaroAsset.url;
+const dashing = dashingAsset.url;
+const x90Plus = x90PlusAsset.url;
 
 export type Trim = {
   name: string;
@@ -159,6 +165,48 @@ export const cars: Car[] = [
       { name: "Style", highlights: ["1.4 TSI", "DSG Auto", "LED Matrix", "17\" Alloys"] },
       { name: "R-Line", highlights: ["1.4 TSI", "Sport Seats", "Digital Cockpit", "18\" Alloys"] },
       { name: "R", highlights: ["2.0 TSI 4Motion", "Performance Brakes", "Panoramic Roof", "Beats Audio"] },
+    ],
+  },
+  {
+    slug: "geely-monjaro",
+    brand: "Geely",
+    model: "Monjaro",
+    image: monjaro,
+    tagline: "Flagship SUV — Luxury & Power",
+    body: "SUV",
+    fuel: "Petrol",
+    trims: [
+      { name: "Comfort", highlights: ["2.0T Engine", "8-Speed Auto", "Leather Seats", "12.3\" Display"] },
+      { name: "Luxury", highlights: ["2.0T Engine", "Panoramic Roof", "Heated/Ventilated Seats", "ADAS"] },
+      { name: "Flagship", highlights: ["2.0T AWD", "Bose Audio", "Massage Seats", "Head-Up Display"] },
+    ],
+  },
+  {
+    slug: "jetour-dashing",
+    brand: "Jetour",
+    model: "Dashing",
+    image: dashing,
+    tagline: "Sport Coupe SUV — Futuristic Design",
+    body: "SUV Coupe",
+    fuel: "Petrol",
+    trims: [
+      { name: "Basic", highlights: ["1.6T Engine", "7-DCT", "LED Matrix Lights", "10.25\" Screen"] },
+      { name: "Sport", highlights: ["1.6T Engine", "Sport Seats", "Panoramic Roof", "Wireless Charge"] },
+      { name: "Top", highlights: ["1.6T DCT", "Leather", "ADAS Level 2", "Ambient Lighting"] },
+    ],
+  },
+  {
+    slug: "jetour-x90-plus",
+    brand: "Jetour",
+    model: "X90 Plus",
+    image: x90Plus,
+    tagline: "Luxury 7-Seater SUV — Bold & Spacious",
+    body: "SUV 7P",
+    fuel: "Petrol",
+    trims: [
+      { name: "Comfort", highlights: ["1.6T 7-Seat", "DCT Auto", "12.3\" Display", "Rear Camera"] },
+      { name: "Luxury", highlights: ["1.6T DCT", "Leather", "Panoramic Roof", "Wireless Charge"] },
+      { name: "Flagship", highlights: ["2.0T DCT", "Massage Seats", "ADAS Level 2", "Premium Audio"] },
     ],
   },
 ];
